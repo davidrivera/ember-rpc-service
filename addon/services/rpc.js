@@ -1,15 +1,40 @@
 import Ember from 'ember';
 
+/**
+ * This is a service to allow you to make
+ * JSON-RPC 2.0 spec'd calls
+ */
 export default Ember.Service.extend({
-  init() {
-    this._super(...arguments);
 
-    this.rpcEndpoint = '/api/JsonRPC';
-    this.type = 'POST';
-    this.dataType = 'JSON';
-    this.contentType = 'application/json; charset=utf-8';
-    this.jsonRpcVersion = '2.0';
-  },
+  /**
+   * The rpc endpoint to hit
+   * @type {String}
+   */
+  rpcEndpoint: '/api/JsonRPC',
+
+  /**
+   * The request type for the rpc call
+   * @type {String}
+   */
+  type: 'POST',
+
+  /**
+   * The data type to send along with the request
+   * @type {String}
+   */
+  dataType: 'JSON',
+
+  /**
+   * The content type for the request
+   * @type {String}
+   */
+  contentType: 'application/json; charset=utf-8',
+
+  /**
+   * The JSON-RPC version default: 2.0
+   * @type {String}
+   */
+  jsonRpcVersion: '2.0',
 
   /**
    * This function always for easy RPC function calls within the codebase. To
